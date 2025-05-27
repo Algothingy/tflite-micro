@@ -1,0 +1,36 @@
+{
+  "name": "tflite-micro",
+  "version": "1.0.0",
+  "description": "Core runtime for running TFLite models on microcontrollers",
+  "keywords": ["tensorflow", "tflite", "ml", "embedded"],
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"],
+  "includeDir": "tensorflow",
+  "build": {
+    "srcFilter": [
+	"+<tensorflow/lite/*.cc>",
+        "+<tensorflow/lite/core/api/*.cc>",
+        "+<tensorflow/lite/micro/*.cc>",
+        "+<tensorflow/lite/kernels/*.cc>",
+        "+<tensorflow/lite/micro/kernels/*.cc>",
+        "+<tensorflow/compiler/mlir/lite/core/api/*.cc>",
+        "+<tensorflow/lite/core/c/*.cc>",
+        "+<tensorflow/lite/kernels/internal/*.cc>",
+        "+<tensorflow/lite/micro/tflite_bridge/*.cc>",
+	"-<tensorflow/lite/micro/*_test.cc>"
+    ],
+    "flags":[
+	"-Itensorflow",
+        "-Itensorflow/lite",
+        "-Itensorflow/lite/micro",
+        "-Itensorflow/lite/micro/tflite_bridge",
+        "-Itensorflow/lite/kernels",
+        "-Itensorflow/lite/kernels/internal",
+        "-Itensorflow/lite/micro/kernels",
+        "-Itensorflow/lite/core/api",
+        "-Itensorflow/lite/core/c"
+    ]
+    
+  }
+}
+
