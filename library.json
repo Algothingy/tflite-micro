@@ -9,6 +9,7 @@
   "build": {
     "srcFilter": [
 	"+<tensorflow/lite/*.cc>",
+	"+<tensorflow/compiler/mlir/lite/schema/*.cc>",
         "+<tensorflow/lite/core/api/*.cc>",
         "+<tensorflow/lite/micro/*.cc>",
         "+<tensorflow/lite/kernels/*.cc>",
@@ -17,18 +18,23 @@
         "+<tensorflow/lite/core/c/*.cc>",
         "+<tensorflow/lite/kernels/internal/*.cc>",
         "+<tensorflow/lite/micro/tflite_bridge/*.cc>",
-	"-<tensorflow/lite/micro/*_test.cc>"
+        "+<tensorflow/lite/micro/arena_allocator/*.cc>",
+        "+<tensorflow/lite/micro/memory_planner/*.cc>",
+	"-<**/*_test.cc>"
     ],
     "flags":[
 	"-Itensorflow",
         "-Itensorflow/lite",
         "-Itensorflow/lite/micro",
+        "-Itensorflow/lite/micro/arena_allocator",
+        "-Itensorflow/lite/micro/memory_planner",
         "-Itensorflow/lite/micro/tflite_bridge",
         "-Itensorflow/lite/kernels",
         "-Itensorflow/lite/kernels/internal",
         "-Itensorflow/lite/micro/kernels",
         "-Itensorflow/lite/core/api",
-        "-Itensorflow/lite/core/c"
+        "-Itensorflow/lite/core/c",
+	"-Itensorflow/compiler/mlir/lite/schema/*.cc"
     ]
     
   }
